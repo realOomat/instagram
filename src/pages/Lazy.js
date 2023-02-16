@@ -10,3 +10,11 @@ export const AuthPages = {
   Login
 }
 
+// LAYOUTPAGES
+
+
+const Home = React.lazy(() => import("../apps/layout/home/Home"));
+
+export const LayoutPages = {
+  Home
+};
