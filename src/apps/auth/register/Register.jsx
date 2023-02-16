@@ -45,7 +45,7 @@ export default function Register() {
   return (
     <Components.Container>
       <section className={cls.register_page}>
-        <div className={cls.register_page_card}>
+        <div className={cls.register_page_card} data-aos="zoom-in-down">
           <Components.Image src={Logo}/>
 
           <h3>
@@ -116,26 +116,19 @@ export default function Register() {
               />
               <Components.Forms.Errors err={errors?.password_repeat ? "err" : "success"}/>
             </Components.Forms.Divider>
+
+            <p className={cls.useable_service}>
+              Люди, которые пользуются нашим сервисом, могли загрузить вашу контактную информацию в Instagram. 
+              <a href="https://www.facebook.com/help/instagram/261704639352628">Подробнее</a>
+            </p>
+
+            <Components.Forms.Divider>
+              <Components.Forms.AuthSubmit location={"Регистрация"}/>
+            </Components.Forms.Divider>
           </form>
-
-          <p className={cls.useable_service}>
-            Люди, которые пользуются нашим сервисом, могли загрузить вашу контактную информацию в Instagram. 
-            <a href="https://www.facebook.com/help/instagram/261704639352628">Подробнее</a>
-          </p>
-
-          <Components.Forms.Divider>
-            <Components.Forms.AuthSubmit location={"Регистрация"}/>
-          </Components.Forms.Divider>
         </div>
-
-        <div className={cls.register_page_bottomCard}>
-          <p>
-            Есть аккаунт?
-            <Link to={AuthPath.login}>
-              Вход
-            </Link>
-          </p>
-        </div>
+        
+        <Components.Forms.AuthNavigate location={"register"}/>
       </section>
     </Components.Container>
   )
