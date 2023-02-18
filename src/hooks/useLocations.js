@@ -11,7 +11,7 @@ export default function useLocations() {
 
   // LAYOUT FORWARDS
 
-  const goToHome = React.useCallback(() => navigate(Layout.home), [navigate])
+  const goToHome = React.useCallback(() => navigate(Layout.home), [navigate]);
 
   return {
     goToLogin,

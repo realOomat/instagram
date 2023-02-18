@@ -1,16 +1,12 @@
-
-
 import React from 'react';
 import { useForm } from 'react-hook-form';
 import { Components } from '../../../components';
 import Logo from "../../../assets/images/logo/insta.png";
 
 import cls from "../../../assets/styles/register/Register.module.scss";
-import { Link } from 'react-router-dom';
 import { formsValidate } from '../../../helpers/forms';
 import { REQUEST } from '../../../api';
 import { Hooks } from '../../../hooks';
-import { AuthPath } from '../../../services/path';
 
 export default function Register() {
   const { goToLogin } = Hooks.useLocations();
@@ -18,8 +14,7 @@ export default function Register() {
   const {
     register,
     handleSubmit,
-    formState: { errors, isValid },
-    setError
+    formState: { errors },
   } = useForm({
     mode: 'onSubmit'
   });
@@ -56,8 +51,8 @@ export default function Register() {
             <Components.Forms.Divider>
               <Components.Forms.TextInput 
                 type="text"
-                placeholder="Username"
                 err={errors}
+                placeholder="Username"
                 {...register("username", formsValidate())}
               />
               <Components.Forms.Errors err={errors?.username ? "err" : "success"}/>
@@ -65,8 +60,8 @@ export default function Register() {
             <Components.Forms.Divider>
               <Components.Forms.TextInput 
                 type="text"
-                placeholder="First Name"
                 err={errors}
+                placeholder="First Name"
                 {...register("first_name", formsValidate())}
               />
               <Components.Forms.Errors err={errors?.first_name ? "err" : "success"}/>
@@ -74,8 +69,8 @@ export default function Register() {
             <Components.Forms.Divider>
               <Components.Forms.TextInput 
                 type="text"
-                placeholder="Last name"
                 err={errors}
+                placeholder="Last name"
                 {...register("last_name", formsValidate())}
               />
               <Components.Forms.Errors err={errors?.last_name ? "err" : "success"}/>
@@ -83,8 +78,8 @@ export default function Register() {
             <Components.Forms.Divider>
               <Components.Forms.TextInput
                 type="text"
-                placeholder="Bio"
                 err={errors}
+                placeholder="Bio"
                 {...register("bio", formsValidate())}
               />
               <Components.Forms.Errors err={errors?.bio ? "err" : "success"}/>
@@ -92,8 +87,8 @@ export default function Register() {
             <Components.Forms.Divider>
               <Components.Forms.TextInput 
                 type="email"
-                placeholder="Email"
                 err={errors}
+                placeholder="Email"
                 {...register("email", formsValidate())}
               />
               <Components.Forms.Errors err={errors?.email ? "err" : "success"}/>
@@ -101,8 +96,8 @@ export default function Register() {
             <Components.Forms.Divider>
               <Components.Forms.TextInput 
                 type="password"
-                placeholder="Password"
                 err={errors}
+                placeholder="Password"
                 {...register("password", formsValidate())}
               />
               <Components.Forms.Errors err={errors?.password ? "err" : "success"}/>
@@ -110,8 +105,8 @@ export default function Register() {
             <Components.Forms.Divider>
               <Components.Forms.TextInput 
                 type="password"
-                placeholder="Password Repeat"
                 err={errors}
+                placeholder="Password Repeat"
                 {...register("password_repeat", formsValidate())}
               />
               <Components.Forms.Errors err={errors?.password_repeat ? "err" : "success"}/>
@@ -128,7 +123,7 @@ export default function Register() {
           </form>
         </div>
         
-        <Components.Forms.AuthNavigate location={"register"}/>
+        <Components.Forms.AuthNavigate location="register"/>
       </section>
     </Components.Container>
   )

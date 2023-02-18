@@ -15,8 +15,7 @@ export default function Login() {
   const {
     register,
     handleSubmit,
-    formState: { errors, isValid },
-    setError
+    formState: { errors }, 
   } = useForm();
 
   const onSubmit = (data) => {
@@ -37,7 +36,7 @@ export default function Login() {
   return (
     <Components.Container>
       <section className={cls.login_page}>
-        <div className={cls.login_page_cart} data-aos="zoom-in-down">
+        <div className={cls.login_page_card} data-aos="zoom-in-down">
           <Components.Image src={Logo}/>
 
           <form onSubmit={handleSubmit(onSubmit)}>
@@ -47,7 +46,7 @@ export default function Login() {
                 placeholder="Username"
                 {...register("username", formsValidate())}
               />
-              <Components.Forms.Errors err={errors?.usename ? "err" : "success"}/>
+              <Components.Forms.Errors err={errors?.username ? "err" : "success"}/>
             </Components.Forms.Divider>
             <Components.Forms.Divider>
               <Components.Forms.TextInput 

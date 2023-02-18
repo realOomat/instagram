@@ -1,10 +1,10 @@
-import React from 'react'
-import { Components } from '../../../components'
+import React from 'react';
+import { Components } from '../../../components';
 
 export default function Home() {
   return (
-    <Components>
+    <Components.Container>
       <h1>HOME</h1>
-    </Components>
+    </Components.Container>
   )
 }
